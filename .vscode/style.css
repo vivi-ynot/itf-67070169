@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+}
+p{
+    font-size: 1rem;
+}
+.navbar{
+    display: flex;
+    flex-direction: row;
+    background-color: aqua;
+    column-gap: 5px;
+    padding: 10px;
+    justify-content: center;
+    height: 10px;
+    border: 10px;
+    width: 1000px;
+}
+.nav-item{
+    background-color: bisque;
+}
+.new{
+    background-color:chartreuse;
+    text-align: center;
+}
+.yeah{
+    display: block;
+    flex-direction: row;
+    background-color: blue;
+    column-gap: 5px;
+    padding: 10px;
+}
+.no{
+    background-color: tomato;
+    display: block;
+    block-size: 50px;
+}
