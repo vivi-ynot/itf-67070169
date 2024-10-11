@@ -1,0 +1,21 @@
+.profile{
+    width: 300px;
+    height: 300px;
+    background-image: url(https://th.bing.com/th/id/R.4a72af51a7f821b8dcc0f43476bbed5b?rik=W%2by4FB90bY%2fz0g&pid=ImgRaw&r=0);
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    position: relative;
+}
+.notify{
+    width: 40px;
+    height: 40px;
+    background-color: lightcoral;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+}
