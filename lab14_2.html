@@ -3,57 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style2.css">
+    <title>Phone Book</title>
+    <link rel="icon" type="image/x-icon" href="https://th.bing.com/th/id/R.4a72af51a7f821b8dcc0f43476bbed5b?rik=W%2by4FB90bY%2fz0g&pid=ImgRaw&r=0">
+    <link rel="stylesheet" type="text/css" href="style2.css"/> 
 </head>
 <body>
-    <div class="profile" id="profile">
-        <div class="notify"><p>1</p></div>
+    <nav>
+        <div class="container">
+          <div class="nav-con">
+            <ul class="menu">
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="lab14_2.html"><b>>>PhoneBook</b></a></li>
+            </ul>
+          </div>
+        </div>  
+      </nav>
+    <h1><span class="username" id="username">Weerachit Saelor 67070169</span>'s Phone Book</h1>
+    <div class="avatar" id="avatar">
+        <div class="notification">1</div>
     </div>
-    <h1 id="user">Alphaca's Phone book</h1>
-    <label>Set username</label><input type="text" id="name"><button onclick="setName()">set</button><p></p>
-    <label>Set Image</label><input type="text" id="input2"><button onclick="setImg()">set</button><p></p>
-    <label>Add Para</label><input type="text" id="input3"><button onclick="addParagraph()">add</button>
-    <label></label><button onclick="saveCSV()">Export</button>
-    <div class="container">
-        
+    <div>
+        <label for="usernameInput">Set Username</label>
+        <input type="text" id="usernameInput" placeholder="Enter Username">
+        <button onclick="setUsername()">SET</button>
     </div>
-
-    <script>
-        const username = document.getElementById("user");
-        const input = document.getElementById("name");
-        const input2 = document.getElementById("input2")
-        const input3 = document.getElementById("input3")
-        const profile = document.getElementById("profile");
-        const newdiv = document.getElementsByClassName("container")[0];
-        
-        function setName(){
-            username.textContent = input.value +"'s Phone book";
-            input.value = "";
-        }
-        function setImg(){
-            profile.style.backgroundImage = "url(" + input2.value + ")";
-            console.log(input2.value);
-            input2.value = "";
-        }
-        function addParagraph(){
-            const newpara = document.createElement("p");
-            newpara.textContent = input3.value;
-            newdiv.appendChild(newpara);
-            input3.value = ""
-        }
-        function saveCSV() {
-            const csvContent = phonenumber.map(row => row.join(",")).join("\n"); // Convert array to CSV string
-                const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
-                const link = document.createElement("a");
-                const url = URL.createObjectURL(blob);
-                link.setAttribute("href", url);
-                link.setAttribute("download", "data.csv");
-                link.style.visibility = "hidden";
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-        };
-    </script>
+    <div>
+        <label for="avatarInput">Set proflie image URL</label>
+        <input type="text" id="avatarInput" placeholder="Enter Image URL">
+        <button onclick="setAvatar()">SET</button>
+    </div>
+    <h3>Phone Number List</h3>
+    <div>
+        <input type="text" id="nameInput" placeholder="Name">
+        <input type="tel" id="phoneInput" placeholder="Tel">
+        <button onclick="addContact()">ADD</button>
+        <button onclick="exportContacts()">EXPORT</button>
+    </div>
+    <table id="contactTable">
+        <tr>
+            <th>No.</th>
+            <th>Name</th>
+            <th>Phone Number</th>
+        </tr>
+    </table>
+    <footer>
+        <a href="https://github.com/vivi-ynot"><b><u>Contact me</u></b></a>
+        <p>ITF-2024, Weerachit Saelor</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
